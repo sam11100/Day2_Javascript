@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>	
+		<input type="text" id="input1"> <br/> 
+		<button id="btn1">DATE & TIME</button>
+		<div id="demo"></div>
+
+
+		<script>	
+
+			//Create a switch statement that displays the current day and time  of the week onto the webpage: 
+			
+					var event_1 = document.getElementById('btn1');
+					event_1.addEventListener('click',getDayAndTime,false);
+				function getDayAndTime(){
+					var date = new Date();
+
+					var input = document.getElementById('input1').value;
+
+
+					switch(input){
+						case 'Date':
+						var day = date.getDate();
+						var month = date.getMonth();
+						var year = date.getFullYear();
+						document.getElementById('demo').innerHTML = day+'/'+month+'/'+year;
+						break;
+
+						case 'Time':
+						var hr = date.getHours();
+						var  min = date.getMinutes();
+						var sec = date.getSeconds();
+						document.getElementById('demo').innerHTML = hr+':'+min+':'+sec;
+						break;
+					}
+
+
+				}
+
+				getDayAndTime();
+
+
+		</script>
+</body>
+</html>
