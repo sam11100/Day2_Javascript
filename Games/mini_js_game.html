@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GUSSING GAME</title>
+	<style>
+		body{
+			background-color:black;
+			
+			color:white;
+			padding: 10%;
+			font-size: 200%;
+			background-image: url('https://media.timeout.com/images/102920649/image.jpg');
+
+
+		}
+		#demo{
+			color:green;
+		}
+		#btn{
+			background-color: white;
+			-moz-transition: 1s ease;
+			-webkit-transition: 1s ease;
+			
+		}
+		#btn:hover{
+			background-color: black;
+			color: white;
+			cursor: pointer;
+		}
+		#heading{
+			text-shadow: 5px 0 0 #666666;		}
+		
+
+	</style>
+</head>
+<body>
+
+<div id="heading" style="font-size:250%">GUESS A NUMBER <br/>BETWEEN 1-10</div>
+<input type="number" id="guess">
+<button id="btn">Submit</button>
+<div id="erro" style="color:red;"></div>
+<div id="demo" ></div>
+<div id="static" style="position:fixed;color:red;"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+			var rand = Math.floor((Math.random()*10)+1);
+			var event1 = document.getElementById('btn');
+			event1.addEventListener('click',game,false);
+			var i = 0;
+			
+
+			
+
+			function game(){
+			var user_input = Number(document.getElementById('guess').value);
+			
+
+			do{			
+				
+				i++;
+				if (user_input<rand){
+						document.getElementById('erro').innerHTML= "The secreat number is greater then "+user_input;
+				} else if(user_input>rand){
+					document.getElementById('erro').innerHTML= "The secreat number is less then "+user_input;
+				}else{
+					if (user_input==rand) {
+						document.getElementById('erro').innerHTML= "";
+						document.getElementById('demo').innerHTML= "WELL DONE!!!"+"<br/>"+" THE SECREAT NUMBER IS "+rand+" IT TOOK YOU "+i+" TRIES TO GUESS IT!!";
+					}
+					
+					break;	
+				}
+			}while(user_input==rand);
+
+
+			
+
+
+			
+
+}
+
+			$(window).ready(function(){
+
+
+				
+				$(window).scroll(function(){
+					var scrollTop = $(window).scrollTop();
+					$('#static').html(scrollTop);
+
+					if (scrollTop==1200) {
+						$('.para').fadeIn(1000);
+					}
+
+				
+
+
+					
+				
+
+});
+
+
+
+
+
+
+
+
+
+
+			});		
+
+
+
+	</script>
+</body>
+</html>
