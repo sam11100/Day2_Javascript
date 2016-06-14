@@ -20,7 +20,13 @@
 			background-color: white;
 			-moz-transition: 1s ease;
 			-webkit-transition: 1s ease;
-			
+			padding: 15px;
+			width: 100px;
+		}
+		#guess{
+			padding: 20px;
+			width: 500px;
+			font-size: 100%;
 		}
 		#btn:hover{
 			background-color: black;
@@ -28,7 +34,16 @@
 			cursor: pointer;
 		}
 		#heading{
-			text-shadow: 5px 0 0 #666666;		}
+			text-shadow: 2px 0 0 #666666;		
+		}
+		#erro,#demo{
+			text-shadow: 1px 0 0 white;
+			background-color: white;	
+			width: 50%;
+		}
+		#demo{
+			width: 100%;
+		}
 		
 
 	</style>
@@ -36,11 +51,10 @@
 <body>
 
 <div id="heading" style="font-size:250%">GUESS A NUMBER <br/>BETWEEN 1-10</div>
-<input type="number" id="guess">
+<input type="number" id="guess"><br/>
 <button id="btn">Submit</button>
 <div id="erro" style="color:red;"></div>
 <div id="demo" ></div>
-<div id="static" style="position:fixed;color:red;"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>
